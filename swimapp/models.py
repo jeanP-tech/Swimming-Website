@@ -5,7 +5,7 @@ class City(models.Model):
 
 class Pool(models.Model):
     city = models.ForeignKey(City, on_delete = models.CASCADE)
-    name = models.CharField(max_length = 30)
+    pool_name = models.CharField(max_length = 30, default='DEFAULT VALUE')
 
 '''
 class Price(models.Model):
