@@ -15,7 +15,6 @@ class Price(models.Model):
     pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
     age = models.CharField(max_length = 20)
     price = models.IntegerField()
-    price_id = models.AutoField(primary_key=True)
     WEEKDAYS = 'WEEK'
     WEEKENDS = 'WEEKENDS'
     WEEK_CHOICES = [
@@ -27,13 +26,11 @@ class Price(models.Model):
         choices=WEEK_CHOICES,
         default=WEEKDAYS,
     )
-    def __str__(self):
-        return '%s %s' % (self.pool, self.price_id)
 
 class Timetable(models.Model):
     pool = models.OneToOneField(Pool, on_delete = models.CASCADE)
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+    start_time = models.TimeField(auto_now=False, auto_now_add=False)
+    end_time = models.TimeField(auto_now=False, auto_now_add=False)
     MONDAY = 'MON'
     TUESDAY = 'TUE'
     WEDNESDAY = 'WED'
