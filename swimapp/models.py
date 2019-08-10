@@ -1,5 +1,8 @@
 from django.db import models
 
+class Users(models.Model):
+    date = models.DateTimefield()
+    
 class City(models.Model):
     city_name = models.CharField(max_length = 20, default='')
     def __str__(self):
