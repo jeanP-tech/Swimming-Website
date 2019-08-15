@@ -1,8 +1,5 @@
 from django.db import models
 
-class Users(models.Model):
-    date = models.DateTimefield()
-    
 class City(models.Model):
     city_name = models.CharField(max_length = 20, default='')
     def __str__(self):
@@ -55,3 +52,6 @@ class Timetable(models.Model):
         choices = DAY_CHOICES,
         default = MONDAY,
     )
+
+Class Userdate(models.Model):
+    user_datetime = models.DateTimefield(auto_now=False, auto_now_add=False)
