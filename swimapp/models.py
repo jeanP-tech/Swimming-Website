@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 class City(models.Model):
     city_name = models.CharField(max_length = 20, default='')
@@ -53,5 +54,5 @@ class Timetable(models.Model):
         default = MONDAY,
     )
 
-Class Userdate(models.Model):
-    user_datetime = models.DateTimefield(auto_now=False, auto_now_add=False)
+class Userinfo(models.Model):
+    user_info = models.DateTimeField(auto_now=False, auto_now_add=False)

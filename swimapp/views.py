@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from .models import City, Pool, Price, Timetable
-from django.http import Http404
+from .models import City, Pool, Price, Timetable, Userinfo
 from .forms import SaveForm
+from django.shortcuts import redirect
 
 import datetime
 
@@ -10,4 +10,4 @@ def index(request):
 
 def save_date(request):
     form = SaveForm()
-    return render(request, 'swimapp/pool_page.html', {'form': form})
+    return render(request, 'swimapp/pool.html', {'form': form})

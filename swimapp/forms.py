@@ -1,7 +1,7 @@
 from django import forms
-from .models import City, pool, Price, Timetable, UserDate
+from .models import City, Pool, Price, Timetable, Userinfo
 
 class SaveForm(forms.ModelForm):
     class Meta:
-        model = UserDate
-        fields = ('user_datetime')
+        model = Userinfo
+        fields = ('user_info',)
