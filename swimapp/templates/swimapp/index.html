@@ -1,28 +1,13 @@
-<h1>Swim, swim!</h1>
-
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
-
-<form action="{% url 'swimapp:detail' %}" method="post">
-{% csrf_token %}
-<input type="submit" value="Let's swim" />
-</form>
-
-<!--
 <html>
     <head>
         <title>Swim, swim!</title>
     </head>
     <body>
         <h1>Swim, swim!</h1>
-        now
-        <form action="get">
-          <button
-            type="submit"
-            class="btn attendBtn"
-            value="{{ item.id }}"
-            name="swim_btn">Let's swim!
-          </button>
-       </form>
+        <h2>Where do you want to swim?</h2>
+          <form method="POST">{% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Let's swim</button>
+        </form>
     </body>
 </html>
--->

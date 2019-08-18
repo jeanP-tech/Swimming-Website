@@ -1,7 +1,14 @@
 from django import forms
+from datetime import datetime
 from .models import City, Pool, Price, Timetable, Userinfo
+from django.forms import ModelChoiceField
 
-class SaveForm(forms.ModelForm):
+class CheckForm(forms.Form):
+    cities = forms.ModelChoiceField(
+        required =True,
+        queryset = City.objects.all()
+        )
+
     class Meta:
-        model = Userinfo
-        fields = ('user_info',)
+        model = City
+        fields = ('city_name',)
