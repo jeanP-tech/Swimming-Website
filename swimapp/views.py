@@ -1,21 +1,29 @@
 from django.shortcuts import render
 from .models import City, Pool, Price, Timetable, Userinfo
 from .forms import CheckForm
-from django.http import HttpResponseRedirect, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 
-import datetime
+from datetime import datetime
 
+'''
 def index(request):
     form = CheckForm()
     return render(request, 'swimapp/index.html', {'form':form})
 
-'''
-def save():
+def saveinfo(request):
     user_datetime = datetime.datetime.now()
     user_datetime.save()
-
-def detail(request):
-
-    #form = SaveForm()
-    #return render(request, 'swimapp/pool.html', {'form': form})
+    return render(request, 'swimapp/index.html')
 '''
+def getinfo(request):
+    if request.method == 'POST':
+        form = CheckForm(request.POST)
+        if form.is_valid():
+            obj = Userinfo()
+            obj.user_city = form.cleaned_data['cities']
+            obj.user_time = datetime.now()
+            obj.save()
+            return HttpResponseRedirect('')
+    else:
+        form = CheckForm()
+    return render(request, 'swimapp/index.html', {'form':form})

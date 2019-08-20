@@ -3,11 +3,11 @@
         <title>Swim, swim!</title>
     </head>
     <body>
-        <h1>Swim, swim!</h1>
-        <h2>Where do you want to swim?</h2>
-          <form method="POST">{% csrf_token %}
+        <h1>SWIM, SWIM!</h1>
+        <form method="POST">{% csrf_token %}
           {{ form.as_p }}
-          <button type="submit">Let's swim</button>
+      
+            <button type="submit" value="Save">Let's swim</button>
         </form>
     </body>
 </html>

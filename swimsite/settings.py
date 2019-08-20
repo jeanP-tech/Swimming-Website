@@ -73,6 +73,10 @@ WSGI_APPLICATION = 'swimsite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+from os.path import dirname, join
+
+PROJECT_DIR = dirname(__file__)
+
 
 DATABASES = {
     'default': {
