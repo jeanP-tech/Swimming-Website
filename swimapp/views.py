@@ -21,7 +21,7 @@ def getinfo(request):
         if form.is_valid():
             obj = Userinfo()
             obj.user_city = form.cleaned_data['cities']
-            obj.user_time = datetime.now()
+            #obj.user_time = datetime.now()
             obj.save()
             return HttpResponseRedirect('')
     else:
