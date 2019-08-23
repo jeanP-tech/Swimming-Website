@@ -10,7 +10,7 @@ class CheckForm(forms.Form):
         queryset = City.objects.all(),
         empty_label=None,
         )
-        
+
     class Meta:
-        model = City,
-        fields = ['city_name',]
+        model = City, Userinfo,
+        fields = ['city_name', 'user_city', 'user_time',]

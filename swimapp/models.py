@@ -57,3 +57,5 @@ class Timetable(models.Model):
 class Userinfo(models.Model):
     user_city = models.CharField(max_length = 20, default='')
     user_time = models.DateTimeField(auto_now=False, auto_now_add=False)
+    def __str__(self):
+        return self.user_city
