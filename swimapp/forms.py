@@ -12,5 +12,5 @@ class CheckForm(forms.Form):
         )
 
     class Meta:
-        model = City, Userinfo,
-        fields = ['city_name', 'user_city', 'user_time',]
+        model = City,
+        fields = ['city_name',]
