@@ -54,8 +54,18 @@ class Timetable(models.Model):
         default = MONDAY,
     )
 
+class TimeInterval(models.Model):
+    TIME_CHOICES = (
+        (3, 3),
+        (5, 5),
+        (7, 7),
+        (12, 12),
+    )
+
+
 class Userinfo(models.Model):
-    user_city = models.CharField(max_length = 20, blank = True)
+    user_city = models.CharField(max_length = 20)
     user_time = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now())
+    user_timeinterval = models.IntegerField(default=3)
     def __str__(self):
         return self.user_city

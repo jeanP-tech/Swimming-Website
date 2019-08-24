@@ -5,16 +5,6 @@ from django.http import HttpResponseRedirect
 
 from datetime import datetime
 
-'''
-def index(request):
-    form = CheckForm()
-    return render(request, 'swimapp/index.html', {'form':form})
-
-def saveinfo(request):
-    user_datetime = datetime.datetime.now()
-    user_datetime.save()
-    return render(request, 'swimapp/index.html')
-'''
 def getinfo(request):
     if request.method == 'POST':
         form = CheckForm(request.POST)
@@ -22,9 +12,10 @@ def getinfo(request):
             obj = Userinfo()
             obj.user_city = form.cleaned_data['cities']
             obj.user_time = datetime.now()
+            obj.user_timeinterval = form.cleaned_data['times']
             obj.save()
-            return HttpResponseRedirect('')
 
+            return HttpResponseRedirect('')
     else:
         form = CheckForm()
     return render(request, 'swimapp/index.html', {'form':form})
