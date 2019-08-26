@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('swimapp.urls')),
+    path('swimapp/pool', include('swimapp.urls')),
 ]

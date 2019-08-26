@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.getinfo, name='index'),
-    #path('pools/detail', views.saveinfo, name = 'saveinfo'),
+    path('swimapp/pool', views.instantview, name='pool'),
 ]

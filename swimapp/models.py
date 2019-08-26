@@ -32,26 +32,26 @@ class Timetable(models.Model):
     pool = models.OneToOneField(Pool, on_delete = models.CASCADE)
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
-    MONDAY = 'MON'
-    TUESDAY = 'TUE'
-    WEDNESDAY = 'WED'
-    THURSDAY = 'THU'
-    FRIDAY = 'FRI'
-    SATURDAY = 'SAT'
-    SUNDAY = 'SUN'
+
+    MONDAY = 1
+    TUESDAY = 2
+    WEDNESDAY = 3
+    THURSDAY = 4
+    FRIDAY = 5
+    SATURDAY = 6
+    SUNDAY = 7
     DAY_CHOICES = [
-        (MONDAY, 'MON'),
-        (TUESDAY, 'TUE'),
-        (WEDNESDAY, 'WED'),
-        (THURSDAY, 'THU'),
-        (FRIDAY, 'FRI'),
-        (SATURDAY, 'SAT'),
-        (SUNDAY, 'SUN'),
+        (MONDAY, 1),
+        (TUESDAY, 2),
+        (WEDNESDAY, 3),
+        (THURSDAY, 4),
+        (FRIDAY, 5),
+        (SATURDAY, 6),
+        (SUNDAY, 7),
     ]
-    day = models.CharField(
-        max_length = 3,
+    day = models.IntegerField(
         choices = DAY_CHOICES,
-        default = MONDAY,
+        default = 1,
     )
 
 class TimeInterval(models.Model):

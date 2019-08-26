@@ -4,8 +4,6 @@ from .models import City, Pool, Userinfo, TimeInterval
 from django.forms import ModelChoiceField, ChoiceField
 from django.forms.widgets import RadioSelect
 
-
-
 class CheckForm(forms.Form):
     cities = forms.ModelChoiceField(
         label='Which city do you want to swim?',
@@ -15,8 +13,9 @@ class CheckForm(forms.Form):
         )
 
     times = forms.ChoiceField(
+        label='몇 시간 내의 수영장을 찾으시나요?',
         widget=forms.RadioSelect(),
-        choices = TimeInterval.TIME_CHOICES,
+        choices=TimeInterval.TIME_CHOICES,
     )
 
     class Meta:
