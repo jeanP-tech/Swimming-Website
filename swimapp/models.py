@@ -29,7 +29,7 @@ class Price(models.Model):
     )
 
 class Timetable(models.Model):
-    pool = models.OneToOneField(Pool, on_delete = models.CASCADE)
+    pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
 

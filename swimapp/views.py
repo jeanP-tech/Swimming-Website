@@ -20,13 +20,14 @@ def getinfo(request):
             user_time = datetime.now()
             user_timeinterval = form.cleaned_data['times']
 
-            day_now = int(datetime.datetime.now().day)
-            hour_now = int(datetime.datetime.now().hour)
-            if hour_now >= 24:
-                hour_now -= 24
-                day_now += timedelta(days = 1)
+            hour = int(datetime.datetime.now().hour)
+            min = int(datetime.datetime.now().min)
+            if hour >= 24:
+                hour -= 24
+                day = int(datetime.datetime.now().day + timedelta(days = 1))
+                day.isoweekday()
+            else:
 
-            min_now = int(datetime.datetime.now().min)
             return HttpResponseRedirect('swimapp/pool')
     else:
         form = CheckForm()
