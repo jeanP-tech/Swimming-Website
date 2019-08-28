@@ -9,12 +9,13 @@ def getinfo(request):
     if request.method == 'POST':
         form = CheckForm(request.POST)
         if form.is_valid():
-            '''
+            
             obj = Userinfo()
             obj.user_city = form.cleaned_data['cities']
             obj.user_time = datetime.now()
             obj.user_timeinterval = form.cleaned_data['times']
             obj.save()
+
             '''
             user_city = form.cleaned_data['cities']
             user_time = datetime.now()
@@ -27,7 +28,7 @@ def getinfo(request):
                 day = int(datetime.datetime.now().day + timedelta(days = 1))
                 day.isoweekday()
             else:
-
+            '''
             return HttpResponseRedirect('swimapp/pool')
     else:
         form = CheckForm()
