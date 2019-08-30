@@ -50,9 +50,14 @@ class Timetable(models.Model):
         (SUNDAY, 7),
     ]
     day = models.IntegerField(
+        
         choices = DAY_CHOICES,
         default = 1,
     )
+
+    def __str__(self):
+        title = '{0.pool} {0.day}'
+        return title.format(self)
 
 class TimeInterval(models.Model):
     TIME_CHOICES = (
@@ -61,7 +66,6 @@ class TimeInterval(models.Model):
         (7, 7),
         (12, 12),
     )
-
 
 class Userinfo(models.Model):
     user_city = models.CharField(max_length = 20)
