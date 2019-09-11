@@ -14,7 +14,6 @@ class Pool(models.Model):
 
 class Price(models.Model):
     pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
-    age = models.CharField(max_length = 20)
     price = models.IntegerField()
     WEEKDAYS = 'WEEK'
     WEEKENDS = 'WEEKENDS'
@@ -27,6 +26,22 @@ class Price(models.Model):
         choices=WEEK_CHOICES,
         default=WEEKDAYS,
     )
+
+    YES = 'Y'
+    NO = 'N'
+    YN_CHOICES = [
+        (YES, 'Y'),
+        (NO, 'N'),
+    ]
+    registered = models.CharField(
+        max_length=1,
+        choices=YN_CHOICES,
+        default=YES,
+    )
+
+    def __str__(self):
+        title = '{0.pool} {0.week} {0.registered}'
+        return title.format(self)
 
 class Timetable(models.Model):
     pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
@@ -50,14 +65,48 @@ class Timetable(models.Model):
         (SUNDAY, 7),
     ]
     day = models.IntegerField(
-        
+
         choices = DAY_CHOICES,
         default = 1,
     )
 
     def __str__(self):
-        title = '{0.pool} {0.day}'
+        title = '{0.pool} {0.day} {0.start_time}'
         return title.format(self)
+
+'''
+class Day(models.Model):
+    pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
+
+    MONDAY = 1
+    TUESDAY = 2
+    WEDNESDAY = 3
+    THURSDAY = 4
+    FRIDAY = 5
+    SATURDAY = 6
+    SUNDAY = 7
+    DAY_CHOICES = [
+        (MONDAY, 1),
+        (TUESDAY, 2),
+        (WEDNESDAY, 3),
+        (THURSDAY, 4),
+        (FRIDAY, 5),
+        (SATURDAY, 6),
+        (SUNDAY, 7),
+    ]
+    day = models.IntegerField(
+
+        choices = DAY_CHOICES,
+        default = 1,
+    )
+    def __str__(self):
+        return self.day
+
+class Time(models.Model):
+    day = models.ForeignKey(Day, on_delete = models.CASCADE)
+    start_time = models.TimeField(auto_now=False, auto_now_add=False)
+    end_time = models.TimeField(auto_now=False, auto_now_add=False)
+'''
 
 class TimeInterval(models.Model):
     TIME_CHOICES = (
@@ -66,6 +115,7 @@ class TimeInterval(models.Model):
         (7, 7),
         (12, 12),
     )
+
 
 class Userinfo(models.Model):
     user_city = models.CharField(max_length = 20)
