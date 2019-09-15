@@ -1,12 +1,7 @@
-<html>
-    <head>
-        <title>SWIM, SWIM!</title>
-    </head>
-    <body>
-        <h1>SWIM, SWIM!</h1>
-        {% for a in pool_list %}
-          {{ a.pool }}
-          {{ a.start_time }}
-        {% endfor %}
-    </body>
-</html>
+{% extends 'swimapp/base.html' %}
+{% block content %}
+    {% for a in pool_list %}
+      {{ a.pool }}
+      {{ a.start_time }}
+    {% endfor %}
+{% endblock %}

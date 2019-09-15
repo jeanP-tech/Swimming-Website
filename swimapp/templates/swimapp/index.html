@@ -1,13 +1,8 @@
-<html>
-    <head>
-        <title>SWIM, SWIM!</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>SWIM, SWIM!</h1>
-        <form method="POST">{% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" value="Save">Let's swim</button>
-        </form>
-    </body>
-</html>
+{% extends 'swimapp/base.html' %}
+{% block content %}
+    <p id="description">지금 당장 자유수영을 할 수 있는 수영장이 알고 싶다면? </p>
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" value="Save">Let's swim</button>
+    </form>
+{% endblock %}

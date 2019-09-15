@@ -6,14 +6,14 @@ from django.forms.widgets import RadioSelect
 
 class CheckForm(forms.Form):
     cities = forms.ModelChoiceField(
-        label='Which city do you want to swim?',
+        label='',
         required=True,
         queryset=City.objects.all(),
         empty_label=None,
         )
 
     times = forms.ChoiceField(
-        label='몇 시간 내의 수영장을 찾으시나요?',
+        label='에서',
         widget=forms.RadioSelect(),
         choices=TimeInterval.TIME_CHOICES,
     )

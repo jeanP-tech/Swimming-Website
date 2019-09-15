@@ -9,14 +9,6 @@ def getinfo(request):
     if request.method == 'POST':
         form = CheckForm(request.POST)
         if form.is_valid():
-            '''
-            obj = Userinfo()
-            obj.user_city = form.cleaned_data['cities']
-            obj.user_time = datetime.now()
-            obj.user_timeinterval = form.cleaned_data['times']
-            obj.save()
-
-            '''
             user_city = form.cleaned_data['cities']
             user_time = datetime.now()
             user_timeinterval = int(form.cleaned_data['times'])
