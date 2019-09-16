@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import City, Pool, Price, Timetable, Userinfo
+from .models import City, Pool, Price, Timetable, TimeInterval
 from .forms import CheckForm
 from django.http import HttpResponseRedirect
 
@@ -13,7 +13,6 @@ def getinfo(request):
             user_time = datetime.now()
             user_timeinterval = int(form.cleaned_data['times'])
             day = datetime.now()
-
             hour = datetime.now().hour + user_timeinterval
             if hour >= 24:
                 hour -= 24

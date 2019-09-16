@@ -6,13 +6,8 @@ class City(models.Model):
     def __str__(self):
         return self.city_name
 
-class District(models.Model):
-    dist_name = models.CharField(max_length = 20, default='')
-    def __str__(self):
-        return self.dist_name
-
 class Pool(models.Model):
-    dist = models.ForeignKey(District, default='', on_delete = models.CASCADE)
+    city = models.ForeignKey(City, default='', on_delete = models.CASCADE)
     pool_name = models.CharField(max_length = 30, default='')
     def __str__(self):
         return self.pool_name
@@ -70,7 +65,6 @@ class Timetable(models.Model):
         (SUNDAY, 7),
     ]
     day = models.IntegerField(
-
         choices = DAY_CHOICES,
         default = 1,
     )
@@ -81,6 +75,7 @@ class Timetable(models.Model):
 
 
 class TimeInterval(models.Model):
+    #times = models.IntegerField()
     TIME_CHOICES = (
         (3, 3),
         (5, 5),
@@ -88,10 +83,16 @@ class TimeInterval(models.Model):
         (12, 12),
     )
 
-
+    '''
+    def __str__(self):
+        title = '{0.TIME_CHOICES}'
+        return title.format(self)
+    '''
+    '''
 class Userinfo(models.Model):
     user_city = models.CharField(max_length = 20)
     user_time = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now())
     user_timeinterval = models.IntegerField(default=3)
     def __str__(self):
         return self.user_city
+        '''
