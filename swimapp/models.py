@@ -73,9 +73,10 @@ class Timetable(models.Model):
         title = '{0.pool} {0.day} {0.start_time}'
         return title.format(self)
 
+class Time(models.Model):
+    time = models.IntegerField(default=0)
 
 class TimeInterval(models.Model):
-    #times = models.IntegerField()
     TIME_CHOICES = (
         (3, 3),
         (5, 5),

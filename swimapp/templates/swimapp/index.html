@@ -3,6 +3,6 @@
     <p id="description">지금 당장 자유수영을 할 수 있는 수영장이 알고 싶다면? </p>
     <form method="POST">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" value="Save">Let's swim</button>
+        <button id="btn" type="submit" value="Save">찾아보자!</button>
     </form>
 {% endblock %}
