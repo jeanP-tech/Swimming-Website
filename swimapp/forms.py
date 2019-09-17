@@ -11,9 +11,9 @@ class CheckForm(forms.Form):
         queryset=City.objects.all(),
         empty_label=None,
         )
-
+    '''
     times = forms.ChoiceField(
-        label='에서',
+        label='',
         widget=forms.RadioSelect(),
         choices=TimeInterval.TIME_CHOICES,
     )
@@ -22,15 +22,15 @@ class CheckForm(forms.Form):
     times = forms.ModelChoiceField(
         label='',
         required=True,
-        queryset=TimeInterval.objects.all(),
+        queryset=TimeInterval.objects.filter(),
         empty_label=None,
         )
-    '''
+
+
     class Meta:
         model = City
         fields = ['city_name',]
-    '''
+
     class Meta:
         model = TimeInterval
-        fields = ['TIME_CHOICES',]
-    '''
+        fields = ['time_name',]

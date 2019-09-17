@@ -74,26 +74,20 @@ class Timetable(models.Model):
         return title.format(self)
 
 class Time(models.Model):
-    time = models.IntegerField(default=0)
+    time = models.IntegerField()
+    def __str__(self):
+        title = '{0.time}'
+        return title.format(self)
 
 class TimeInterval(models.Model):
+    '''
     TIME_CHOICES = (
-        (3, 3),
-        (5, 5),
-        (7, 7),
-        (12, 12),
+        (3, "3시간"),
+        (7, "7시간"),
     )
-
     '''
+    time = models.IntegerField(default=0)
+    time_name = models.CharField(max_length=10, default='')
     def __str__(self):
-        title = '{0.TIME_CHOICES}'
+        title = '{0.time_name}'
         return title.format(self)
-    '''
-    '''
-class Userinfo(models.Model):
-    user_city = models.CharField(max_length = 20)
-    user_time = models.DateTimeField(auto_now=False, auto_now_add=False, default=datetime.now())
-    user_timeinterval = models.IntegerField(default=3)
-    def __str__(self):
-        return self.user_city
-        '''
