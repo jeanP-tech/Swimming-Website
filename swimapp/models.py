@@ -1,6 +1,7 @@
 from django.db import models
 from datetime import datetime
 
+
 class City(models.Model):
     city_name = models.CharField(max_length = 20, default='')
     def __str__(self):
@@ -80,14 +81,17 @@ class Time(models.Model):
         return title.format(self)
 
 class TimeInterval(models.Model):
-    '''
+
     TIME_CHOICES = (
         (3, "3시간"),
         (7, "7시간"),
+        (12, "12시간"),
     )
+    #time = models.CharField(max_length=10, choices="TIME_CHOICES")
     '''
     time = models.IntegerField(default=0)
     time_name = models.CharField(max_length=10, default='')
     def __str__(self):
         title = '{0.time_name}'
         return title.format(self)
+    '''

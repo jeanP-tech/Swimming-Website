@@ -11,26 +11,26 @@ class CheckForm(forms.Form):
         queryset=City.objects.all(),
         empty_label=None,
         )
-    '''
+
     times = forms.ChoiceField(
         label='',
-        widget=forms.RadioSelect(),
         choices=TimeInterval.TIME_CHOICES,
     )
-    '''
 
+    '''
     times = forms.ModelChoiceField(
         label='',
         required=True,
-        queryset=TimeInterval.objects.filter(),
+        queryset=TimeInterval.objects.all(),
         empty_label=None,
         )
-
+    '''
 
     class Meta:
         model = City
         fields = ['city_name',]
-
+    '''
     class Meta:
         model = TimeInterval
-        fields = ['time_name',]
+        fields = ['time']
+    '''
