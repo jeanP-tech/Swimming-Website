@@ -1,5 +1,5 @@
 from django import forms
-from datetime import datetime
+from datetime import datetime, date
 from .models import City, Pool, TimeInterval
 from django.forms import ModelChoiceField, ChoiceField
 from django.forms.widgets import RadioSelect
