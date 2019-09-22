@@ -1,8 +1,7 @@
 from django import forms
 from datetime import datetime, date
-from .models import City, Pool, TimeInterval
+from .models import City, TimeInterval
 from django.forms import ModelChoiceField, ChoiceField
-from django.forms.widgets import RadioSelect
 
 class CheckForm(forms.Form):
     cities = forms.ModelChoiceField(
@@ -10,7 +9,7 @@ class CheckForm(forms.Form):
         required=True,
         queryset=City.objects.all(),
         empty_label=None,
-        widget= forms.Select(attrs={'class':'city_form'}),
+        #widget= forms.Select(attrs={'class':'city_form'}),
         )
 
     times = forms.ChoiceField(
@@ -18,20 +17,6 @@ class CheckForm(forms.Form):
         choices=TimeInterval.TIME_CHOICES,
     )
 
-    '''
-    times = forms.ModelChoiceField(
-        label='',
-        required=True,
-        queryset=TimeInterval.objects.all(),
-        empty_label=None,
-        )
-    '''
-
     class Meta:
         model = City
         fields = ['city_name',]
-    '''
-    class Meta:
-        model = TimeInterval
-        fields = ['time']
-    '''

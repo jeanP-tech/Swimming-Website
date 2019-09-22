@@ -1,7 +1,6 @@
 from django.db import models
 from datetime import datetime
 
-
 class City(models.Model):
     city_name = models.CharField(max_length = 20, default='')
     def __str__(self):
@@ -16,11 +15,12 @@ class Pool(models.Model):
 class Price(models.Model):
     pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
     price = models.IntegerField()
-    WEEKDAYS = 'WEEK'
-    WEEKENDS = 'WEEKENDS'
+
+    WEEKDAYS = '평일'
+    WEEKENDS = '주말'
     WEEK_CHOICES = [
-        (WEEKDAYS, 'Weekdays'),
-        (WEEKENDS, 'Weekends'),
+        (WEEKDAYS, '평일'),
+        (WEEKENDS, '주말'),
     ]
     week = models.CharField(
         max_length=10,
@@ -49,21 +49,14 @@ class Timetable(models.Model):
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
 
-    MONDAY = 1
-    TUESDAY = 2
-    WEDNESDAY = 3
-    THURSDAY = 4
-    FRIDAY = 5
-    SATURDAY = 6
-    SUNDAY = 7
     DAY_CHOICES = [
-        (MONDAY, 1),
-        (TUESDAY, 2),
-        (WEDNESDAY, 3),
-        (THURSDAY, 4),
-        (FRIDAY, 5),
-        (SATURDAY, 6),
-        (SUNDAY, 7),
+        (1, "월요일"),
+        (2, "화요일"),
+        (3, "수요일"),
+        (4, "목요일"),
+        (5, "금요일"),
+        (6, "토요일"),
+        (7, "일요일"),
     ]
     day = models.IntegerField(
         choices = DAY_CHOICES,
