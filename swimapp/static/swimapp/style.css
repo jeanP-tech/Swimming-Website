@@ -19,3 +19,7 @@ body{
   font-size: 16px;
   text-align: center;
 }
+
+#city_form{
+  padding: 100px 100px;
+}

@@ -86,6 +86,7 @@ class TimeInterval(models.Model):
         (3, "3시간"),
         (7, "7시간"),
         (12, "12시간"),
+        (24, "24시간")
     )
     #time = models.CharField(max_length=10, choices="TIME_CHOICES")
     '''
