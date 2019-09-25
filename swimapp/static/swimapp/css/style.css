@@ -7,7 +7,7 @@
 
 body{
   text-align: center;
-  background-image: url(../images/8.jpg);
+  background-image: url(../images/1.jpg);
   background-size: cover;
   background-position: center;
   color: white;
@@ -17,6 +17,9 @@ body{
 #description{
   margin-bottom: 30px;
   color: white;
+  background-color: grey;
+  opacity: 0.9;
+
 }
 
 #btn{
@@ -37,12 +40,7 @@ body{
   filter: brightness(80%);
 }
 
-#city_form-content{
-  display: none;
-position: absolute;
-background-color: #f9f9f9;
-min-width: 160px;
-box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-padding: 12px 16px;
-z-index: 1;
+#city_form{
+  size: 50px;
+  width: 50px;
 }
