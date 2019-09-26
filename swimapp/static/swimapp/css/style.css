@@ -1,31 +1,54 @@
-.logo{
+#logo{
   width: 30%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  display:block;
+  margin: 0 auto;
 }
 
 body{
   text-align: center;
-  background-image: url(../images/1.jpg);
+  background-image: url(../images/8.jpg);
   background-size: cover;
   background-position: center;
   color: white;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
+body.img{
+  opacity: 0.6;
+}
+
 #description{
+  margin-top: 30px;
   margin-bottom: 30px;
   color: white;
-  background-color: grey;
-  opacity: 0.9;
+  /*background-color: rgba(1, 106, 215, 0.6);*/
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 700;
+}
 
+.text{
+  display: inline;
+  /*background-color: rgba(1, 106, 215, 0.6);*/
+  font-weight: 700;
+
+}
+
+#city_form{
+  size: 50px;
+  width: 50px;
+  margin-top: 10px;
+}
+
+#first{
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #btn{
   border:none;
   color: white;
-  background-color: Transparent;
+  background-color: rgb(255, 255, 255, 0.3);
   padding: 15px 32px;
   font-size: 16px;
   text-align: center;
@@ -33,14 +56,16 @@ body{
   border: 2px solid;
   border-radius: 25px;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 #btn:hover {
   filter: brightness(80%);
 }
 
-#city_form{
-  size: 50px;
-  width: 50px;
+.pool_list{
+  display: inline-block;
+  color: white;
+  margin-top: 30px;
+  font-weight: 700;
 }

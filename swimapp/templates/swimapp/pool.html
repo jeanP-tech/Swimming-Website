@@ -1,5 +1,6 @@
 {% extends 'swimapp/base.html' %}
 {% block content %}
+  <div class="pool_list">
     {% for a in pool_list %}
       {{ a.pool }}
       {{ a.get_day_display }}
@@ -8,4 +9,5 @@
       {{ a.price }}
       {{ value|linebreaks }}
     {% endfor %}
+  </div>
 {% endblock %}

@@ -9,12 +9,14 @@ class CheckForm(forms.Form):
         required=True,
         queryset=City.objects.all(),
         empty_label=None,
+        widget=forms.Select(attrs={'class': 'city_select'})
         #widget= forms.Select(attrs={'class':'city_form'}),
         )
 
     times = forms.ChoiceField(
         label='',
         choices=TimeInterval.TIME_CHOICES,
+        widget=forms.Select(attrs={'class': 'time_select'})
     )
 
     class Meta:

@@ -1,12 +1,12 @@
 {% extends 'swimapp/base.html' %}
 {% block content %}
     <p id="description">지금 당장 자유수영을 할 수 있는 수영장이 알고 싶다면? </p>
-    <form method="POST">{% csrf_token %}
+    <form method="POST" class="form">{% csrf_token %}
         <!--{{ form.as_p }}-->
-        <p id="first">
-          <id="citi_form"> {{ form.cities }} 에 있는 </p>
-        <p id="second">
-          <id="time_form">{{ form.times }} 내의 수영장으로 </p>
+        <div id="first">
+          <id="citi_form"> {{ form.cities }} <span class="text">에 있는 </span> </div>
+        <div id="second">
+          <id="time_form">{{ form.times }} <span class="text">내의 수영장으로 </span></div>
         <button id="btn" type="submit" value="Save">찾아보자!</button>
     </form>
 {% endblock %}
