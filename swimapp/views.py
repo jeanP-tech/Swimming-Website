@@ -19,11 +19,23 @@ def getinfo(request):
             if hour >= 24:
                 if weekday == 1:
                     pool_list = Timetable.objects.filter(day=7, start_time__gte=date.time(), end_time__lte=time(23,59,59)) | Timetable.objects.filter(day=1, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time())
+                    price_list = Price.objects.filter(week = 'WEEKENDS')
                 else:
                     pool_list = Timetable.objects.filter(Q(day=weekday-1, start_time__gte=date.time(), end_time__lte=time(23,59,59)) | Q(day=weekday, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time()))
+                    if weekday <= 5:
+                        w = 'WEEKDAYS'
+                    else:
+                        w = 'WEEKENDS'
+                    price_list = Price.objects.filter(week = w)
+
             else:
+                if weekday <= 5:
+                    w = 'WEEKDAYS'
+                else:
+                    w = 'WEEKENDS'
                 pool_list = Timetable.objects.filter(day=weekday, start_time__gte=date.time(), end_time__lt=transfered_date.time())
-            return render(request, 'swimapp/pool.html', {'pool_list': pool_list})
+                price_list = Price.objects.filter(week = w)
+            return render(request, 'swimapp/pool.html', {'pool_list': pool_list}, {'price_list': price_list})
     else:
         form = CheckForm()
     return render(request, 'swimapp/index.html', {'form':form})

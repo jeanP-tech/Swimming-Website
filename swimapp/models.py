@@ -63,6 +63,18 @@ class Timetable(models.Model):
         default = 1,
     )
 
+    WEEKDAYS = '평일'
+    WEEKENDS = '주말'
+    WEEK_CHOICES = [
+        (WEEKDAYS, '평일'),
+        (WEEKENDS, '주말'),
+    ]
+    week = models.CharField(
+        max_length=10,
+        choices=WEEK_CHOICES,
+        default=WEEKDAYS,
+    )
+
     def __str__(self):
         title = '{0.pool} {0.day} {0.start_time}'
         return title.format(self)
