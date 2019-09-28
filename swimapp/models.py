@@ -79,12 +79,6 @@ class Timetable(models.Model):
         title = '{0.pool} {0.day} {0.start_time}'
         return title.format(self)
 
-class Time(models.Model):
-    time = models.IntegerField()
-    def __str__(self):
-        title = '{0.time}'
-        return title.format(self)
-
 class TimeInterval(models.Model):
 
     TIME_CHOICES = (
@@ -93,11 +87,3 @@ class TimeInterval(models.Model):
         (12, "12시간"),
         (24, "24시간")
     )
-    #time = models.CharField(max_length=10, choices="TIME_CHOICES")
-    '''
-    time = models.IntegerField(default=0)
-    time_name = models.CharField(max_length=10, default='')
-    def __str__(self):
-        title = '{0.time_name}'
-        return title.format(self)
-    '''

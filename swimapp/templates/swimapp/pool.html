@@ -6,7 +6,9 @@
       {{ a.get_day_display }}
       {{ a.start_time }} ~
       {{ a.end_time }}
-      {{ a.price }}
+    {% endfor %}
+    {% for b in price_list%}
+      {{ b.price }}
       {{ value|linebreaks }}
     {% endfor %}
   </div>
