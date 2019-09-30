@@ -28,20 +28,8 @@ class Price(models.Model):
         default=WEEKDAYS,
     )
 
-    YES = 'Y'
-    NO = 'N'
-    YN_CHOICES = [
-        (YES, 'Y'),
-        (NO, 'N'),
-    ]
-    registered = models.CharField(
-        max_length=1,
-        choices=YN_CHOICES,
-        default=YES,
-    )
-
     def __str__(self):
-        title = '{0.pool} {0.week} {0.registered}'
+        title = '{0.pool} {0.week}'
         return title.format(self)
 
 class Timetable(models.Model):

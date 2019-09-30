@@ -10,7 +10,6 @@ class CheckForm(forms.Form):
         queryset=City.objects.all(),
         empty_label=None,
         widget=forms.Select(attrs={'class': 'city_select'})
-        #widget= forms.Select(attrs={'class':'city_form'}),
         )
 
     times = forms.ChoiceField(

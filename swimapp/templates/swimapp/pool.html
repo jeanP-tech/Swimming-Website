@@ -6,10 +6,8 @@
       {{ a.get_day_display }}
       {{ a.start_time }} ~
       {{ a.end_time }}
-    {% endfor %}
-    {% for b in price_list%}
-      {{ b.price }}
       {{ value|linebreaks }}
     {% endfor %}
   </div>
+  <div class="reference"> 참고사항 </div>
 {% endblock %}
