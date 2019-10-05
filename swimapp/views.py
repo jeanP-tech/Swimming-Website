@@ -25,16 +25,16 @@ def getinfo(request):
 
             if hour >= 24:
                 if weekday == 1:
-                    pool_list = Timetable.objects.filter(pool__in=pool_city, day=7, start_time__gte=date.time(), end_time__lte=time(23,59,59), price__week=week_today) | Timetable.objects.filter(day=1, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time(), price__week=week_today)
+                    pool_list = Timetable.objects.filter(pool__in=pool_city, day=7, start_time__gte=date.time(), end_time__lte=time(23,59,59)) | Timetable.objects.filter(day=1, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time())
                 else:
-                    pool_list = Timetable.objects.filter(Q(pool__in=pool_city, day=weekday-1, start_time__gte=date.time(), end_time__lte=time(23,59,59), price__week=week_today) | Q(pool__in=pool_city, day=weekday, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time(), price__week=week_today))
+                    pool_list = Timetable.objects.filter(Q(pool__in=pool_city, day=weekday-1, start_time__gte=date.time(), end_time__lte=time(23,59,59), price__week=week_today) | Q(pool__in=pool_city, day=weekday, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time()))
             else:
-                pool_list = Timetable.objects.filter(pool__in=pool_city, day=weekday, start_time__gte=date.time(), end_time__lt=transfered_date.time(), price__week=week_today)
+                pool_list = Timetable.objects.filter(pool__in=pool_city, day=weekday, start_time__gte=date.time(), end_time__lt=transfered_date.time())
 
             return render(request, 'swimapp/pool.html', {'pool_list': pool_list})
     else:
         form = CheckForm()
     return render(request, 'swimapp/index.html', {'form':form})
-
-def instantview(request):
-    return render(request, 'swimapp/pool.html', {})
+#
+# def instantview(request):
+#     return render(request, 'swimapp/pool.html', {})

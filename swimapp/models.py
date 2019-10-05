@@ -36,7 +36,7 @@ class Timetable(models.Model):
     pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
-    price = models.ManyToManyField(Price)
+    price = models.OneToOneField(Price, on_delete=models.CASCADE,)
 
     DAY_CHOICES = [
         (1, "월요일"),
