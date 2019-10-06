@@ -6,7 +6,9 @@
         <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
     </head>
     <body>
-        <a href=""> <img src="{% static "swimapp/images/logo.png" %}" id="logo"></a>
+        <div class="logoBox">
+          <a href=""> <img src="{% static "swimapp/images/logo.png" %}" id="logo"></a>
+        </div>
         {% block content %}
         {% endblock %}
     </body>

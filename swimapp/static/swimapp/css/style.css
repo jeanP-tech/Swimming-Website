@@ -1,7 +1,12 @@
 #logo{
   width: 30%;
-  display:block;
+  display:inline;
   margin: 0 auto;
+}
+
+.logoBox{
+  margin: 0 auto;
+  text-align: center;
 }
 
 body{
@@ -11,10 +16,6 @@ body{
   background-position: center;
   color: white;
   font-family: 'Noto Sans KR', sans-serif;
-}
-
-body.img{
-  opacity: 0.6;
 }
 
 #description{
@@ -68,4 +69,8 @@ body.img{
   color: white;
   margin-top: 30px;
   font-weight: 700;
+}
+
+.note_contents{
+  visibility:hidden;
 }

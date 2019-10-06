@@ -16,22 +16,17 @@ def getinfo(request):
             transfered_date = date + timedelta(hours = user_timeinterval)
             weekday = transfered_date.isoweekday()
             hour = date.hour + user_timeinterval
-            pool_city = Pool.objects.filter(city=user_city)
-
-            if weekday <= 5:
-                week_today = 'WEEKDAYS'
-            else:
-                week_today = 'WEEKENDS'
+            pool_list = Pool.objects.filter(city=user_city)
 
             if hour >= 24:
                 if weekday == 1:
-                    pool_list = Timetable.objects.filter(pool__in=pool_city, day=7, start_time__gte=date.time(), end_time__lte=time(23,59,59)) | Timetable.objects.filter(day=1, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time())
+                    time_list = Timetable.objects.filter(pool__in=pool_list, day=7, start_time__gte=date.time(), end_time__lte=time(23,59,59)) | Timetable.objects.filter(day=1, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time())
                 else:
-                    pool_list = Timetable.objects.filter(Q(pool__in=pool_city, day=weekday-1, start_time__gte=date.time(), end_time__lte=time(23,59,59), price__week=week_today) | Q(pool__in=pool_city, day=weekday, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time()))
+                    time_list = Timetable.objects.filter(Q(pool__in=pool_list, day=weekday-1, start_time__gte=date.time(), end_time__lte=time(23,59,59)) | Q(pool__in=pool_list, day=weekday, start_time__gte=time(0,0,0), end_time__lt=transfered_date.time()))
             else:
-                pool_list = Timetable.objects.filter(pool__in=pool_city, day=weekday, start_time__gte=date.time(), end_time__lt=transfered_date.time())
+                time_list = Timetable.objects.filter(pool__in=pool_list, day=weekday, start_time__gte=date.time(), end_time__lt=transfered_date.time())
 
-            return render(request, 'swimapp/pool.html', {'pool_list': pool_list})
+            return render(request, 'swimapp/pool.html', {'pool_list': pool_list, 'time_list': time_list})
     else:
         form = CheckForm()
     return render(request, 'swimapp/index.html', {'form':form})
