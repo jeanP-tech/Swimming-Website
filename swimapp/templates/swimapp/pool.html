@@ -6,26 +6,28 @@
         {% for time in time_list %}
           {% if pool.pool_name|stringformat:"s" == time.pool|stringformat:"s" %}
             {{ time.get_day_display }}
-            {{ time.start_time }} ~
-            {{ time.end_time }}
+            {{ time.start_time|time:"H:i" }} ~
+            {{ time.end_time|time:"H:i" }}
             {{ time.price }}원
             {{ value|linebreaks }}
           {% endif %}
         {% endfor %}
-      <div class="note"> <p>참고사항</p>
-          {{ pool.note|linebreaks }}
-      </div>
+      <div id="note" onclick="showRef()"> 참고사항 </div>
+          <div id="note_contents">
+            {{ pool.note|linebreaks }}
+          </div>
     {% endfor %}
+  </div>
 
   <script>
-    function showRef(){
-        var element = document.getElementById("note_contents");
-
-        if(element.style.visibility == "hidden"){
-               element.style.visibility = "visible";
-           } else {
-               element.style.visibility = "hidden";
-           }
+    document.getElementById("note_contents").style.display = "none";
+    function showRef() {
+      var x = document.getElementById("note_contents");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
     }
   </script>
 {% endblock %}

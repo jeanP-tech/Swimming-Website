@@ -71,6 +71,6 @@ body{
   font-weight: 700;
 }
 
-.note{
-  visibility:hidden;
+.time_list{
+  border-bottom: 50px;
 }

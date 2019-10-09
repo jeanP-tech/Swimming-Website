@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import City, Pool, Price, Timetable, TimeInterval
+from .models import City, Pool, Timetable, TimeInterval
 from .forms import CheckForm
 from django.http import HttpResponseRedirect
 from django.db.models import Q

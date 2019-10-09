@@ -13,31 +13,31 @@ class Pool(models.Model):
     def __str__(self):
         return self.pool_name
 
-class Price(models.Model):
-    pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
-    price = models.IntegerField()
+# class Price(models.Model):
+#     pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
+#     price = models.IntegerField()
 
-    WEEKDAYS = '평일'
-    WEEKENDS = '주말'
-    WEEK_CHOICES = [
-        (WEEKDAYS, '평일'),
-        (WEEKENDS, '주말'),
-    ]
-    week = models.CharField(
-        max_length=10,
-        choices=WEEK_CHOICES,
-        default=WEEKDAYS,
-    )
-
-    def __str__(self):
-        title = '{0.price}'
-        return title.format(self)
+    # WEEKDAYS = '평일'
+    # WEEKENDS = '주말'
+    # WEEK_CHOICES = [
+    #     (WEEKDAYS, '평일'),
+    #     (WEEKENDS, '주말'),
+    # ]
+    # week = models.CharField(
+    #     max_length=10,
+    #     choices=WEEK_CHOICES,
+    #     default=WEEKDAYS,
+    # )
+    #
+    # def __str__(self):
+    #     title = '{0.price}'
+    #     return title.format(self)
 
 class Timetable(models.Model):
     pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
-    price = models.ManyToManyField(Price)
+    price = models.IntegerField(default=3500)
 
     DAY_CHOICES = [
         (1, "월요일"),
@@ -52,19 +52,6 @@ class Timetable(models.Model):
         choices = DAY_CHOICES,
         default = 1,
     )
-
-    WEEKDAYS = '평일'
-    WEEKENDS = '주말'
-    WEEK_CHOICES = [
-        (WEEKDAYS, '평일'),
-        (WEEKENDS, '주말'),
-    ]
-    week = models.CharField(
-        max_length=10,
-        choices=WEEK_CHOICES,
-        default=WEEKDAYS,
-    )
-
 
     def __str__(self):
         title = '{0.pool} {0.day} {0.start_time}'
