@@ -12,7 +12,7 @@
             {{ value|linebreaks }}
           {% endif %}
         {% endfor %}
-      <div id="note" onclick="showRef()"> 참고사항 </div>
+      <div id="note" onclick="showRef()"> 자세히 </div>
           <div id="note_contents">
             {{ pool.note|linebreaks }}
           </div>
@@ -23,11 +23,21 @@
     document.getElementById("note_contents").style.display = "none";
     function showRef() {
       var x = document.getElementById("note_contents");
+      var note = document.getElementById("note");
       if (x.style.display === "none") {
+        note.innerHTML = "접기";
         x.style.display = "block";
       } else {
+        note.innerHTML = "자세히";
         x.style.display = "none";
       }
+
+      // if (x.style.display === "none") {
+      //   x.style.display = "block";
+      //   note.replace("점기");
+      // } else {
+      //   x.style.display = "none";
+      // }
     }
   </script>
 {% endblock %}

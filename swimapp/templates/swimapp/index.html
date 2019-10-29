@@ -1,6 +1,9 @@
 {% extends 'swimapp/base.html' %}
 {% block content %}
-    <p id="description">지금 당장 자유수영을 할 수 있는 수영장이 알고 싶다면? </p>
+    <div id="description">
+      지금 당장 <div class="box">자유수영</div>을 할 수 있는<br>
+      <div class="box">수영장</div>이 알고 싶다면?
+    </div>
     <form method="POST" class="form">{% csrf_token %}
         <!--{{ form.as_p }}-->
         <div id="first">
