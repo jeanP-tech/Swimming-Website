@@ -92,3 +92,11 @@ body{
 #note{
   text-decoration: underline;
 }
+
+.form_select{
+  width: 100px;
+  padding: 16px 20px;
+  border: 5px;
+  background-color: none;
+  position: relative;
+}
