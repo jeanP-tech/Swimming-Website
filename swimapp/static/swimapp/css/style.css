@@ -93,6 +93,16 @@ body{
   text-decoration: underline;
 }
 
+#note_contents{
+  width: 80%;
+  border: solid 1px #0090ff;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin: auto;
+  text-align: left;
+  padding: 1% 2%;
+}
+
 .form_select{
   width: 100px;
   padding: 16px 20px;
