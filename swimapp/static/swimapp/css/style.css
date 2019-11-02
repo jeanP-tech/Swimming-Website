@@ -1,7 +1,7 @@
 #logo{
-  width: 531px;
+  width: 40%;
   display:inline;
-  margin: 4.9% 22.9% 1% 25.2%;
+  /* margin: 25.2% 1% 22.9% 4.9%; */
 }
 
 .logoBox{
@@ -30,8 +30,8 @@ body{
   letter-spacing: -0.75px;
   text-align: center;
   display: inline-block;
-  /* width: 367px;
-  height: 73px; */
+  width: 30%;
+
   padding: 10px 0;
 }
 

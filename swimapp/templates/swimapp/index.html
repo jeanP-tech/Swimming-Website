@@ -12,4 +12,8 @@
           <id="time_form">{{ form.times }} <span class="text">내의 수영장으로 </span></div>
         <button id="btn" type="submit" value="Save">찾아보자!</button>
     </form>
+    <div class="city_list">
+      {% for city in city_list %}
+        {{ city.city_name }}
+      {% endfor %}
 {% endblock %}
