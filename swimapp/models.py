@@ -40,6 +40,7 @@ class Timetable(models.Model):
 class TimeInterval(models.Model):
 
     TIME_CHOICES = (
+        ('', ' '),
         (3, "3시간"),
         (7, "7시간"),
         (12, "12시간"),
