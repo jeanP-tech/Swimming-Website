@@ -1,37 +1,43 @@
 {% extends 'swimapp/base.html' %}
 {% block content %}
-    <div id="description">
+    <div class="description">
       지금 당장 <span class="box">자유수영</span>을 할 수 있는<br>
       <span class="box">수영장</span>이 알고 싶다면?
     </div>
-    <form method="POST" class="form">{% csrf_token %}
-        <div id="first">
-          <id="citi_form"> {{ form.cities }} <span class="text">에 있는 </span> </div>
-        <div id="second">
-          <id="time_form">{{ form.times }} <span class="text">내의 수영장으로 </span></div>
-        <button id="btn" type="submit" value="Save">찾아보자!</button>
-    </form>
-    <div class="city_list">
-      {% for city in city_list %}
-        <button class="city-action-btn" type="button">{{ city.city_name }}</button>
-        <div class="pool_in_city">
-          {% pool.city %}
-        </div>
-      {% endfor %}
+    <div class="background">
+      <div class="infoForm">
+        <form method="POST" class="form">{% csrf_token %}
+          <div class="formLine">
+              <div id="citi_form"> {{ form.cities }} <span class="text">에 있는 </span> </div>
+              <div id="time_form">{{ form.times }} <span class="text">내의 수영장으로 </span></div>
+          </div>
+            <button id="btn" type="submit" value="Save">찾아보자!</button>
+        </form>
+      </div>
+      <div class="city_list">
+        {% for city in city_list %}
+          <button class="city-action-btn" type="button">{{ city.city_name }}</button>
+        {% endfor %}
+      </div>
+      <div class="pool_in_city">
+      </div>
     </div>
 
     <script>
-      document.getElementById("pool_in_city").style.display = "none";
-      function showRef() {
-        var x = document.getElementById("note_contents");
-        var a = {{ pool.pool_name }}
-        if (x.style.display === "none") {
-          note.innerHTML = "접기";
-          x.style.display = "block";
-        } else {
-          note.innerHTML = "자세히";
-          x.style.display = "none";
-        }
+      function showPoolList(cityCity_name){
+        document.getElementById
       }
+      // document.getElementById("pool_in_city").style.display = "none";
+      // function showRef() {
+      //   var x = document.getElementById("note_contents");
+      //   var a = {{ pool.pool_name }}
+      //   if (x.style.display === "none") {
+      //     note.innerHTML = "접기";
+      //     x.style.display = "block";
+      //   } else {
+      //     note.innerHTML = "자세히";
+      //     x.style.display = "none";
+      //   }
+      // }
     </script>
 {% endblock %}

@@ -1,26 +1,27 @@
+body{
+  text-align: center;
+  color: black;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin: 0;
+}
+
 #logo{
-  width: 40%;
+  width: 50%;
   display:inline;
-  /* margin: 25.2% 1% 22.9% 4.9%; */
 }
 
 .logoBox{
+  width: 100%;
+  height: 100px;
   margin: 0 auto;
   text-align: center;
+  vertical-align: middle;
 }
 
-body{
-  text-align: center;
-  background-color: white;
-  background-image: url(../images/BG_1.png);
-  background-size: cover;
-  background-position: top 424px;
-  background-repeat: no-repeat;
-  color: black;
-  font-family: 'Noto Sans KR', sans-serif;
-}
 
-#description{
+.description{
+  width: 100%;
+  height: 130px;
   color: #777777;
   font-size: 30px;
   font-weight: normal;
@@ -29,16 +30,39 @@ body{
   line-height: 1.5;
   letter-spacing: -0.75px;
   text-align: center;
+  vertical-align: middle;
   display: inline-block;
-  width: 30%;
+  padding: 80px 0 20px 0;
+}
 
-  padding: 10px 0;
+.infoForm{
+  width: 100%;
+  height: 395px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.city_list{
+  width: 100%;
+  height: 310px;
+}
+
+.pool_in_city{
+  width: 100%;
+  height: 230px;
+}
+
+.background{
+  background-image: url(../images/BG_1.png);
+  background-size: cover;
+  background-position: 0 10px 0 0;
+  background-repeat: no-repeat;
 }
 
 .box{
   color: white;
-  width: 103px;
-  height: 30px;
+  /* width: 103px;
+  height: 30px; */
   background-color: #0090ff;
   display: inline-block;
 }
@@ -50,20 +74,25 @@ body{
 
 }
 
-#city_form{
-  size: 50px;
-  width: 50px;
-  margin-top: 10px;
+.infoForm{
+  padding-top: 100px;
+  font-size: 45px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.56;
+  letter-spacing: -1.13px;
+  color: #ffffff;
 }
 
-#first{
-  margin-top: 20px;
-  margin-bottom: 20px;
+.formLine{
+  text-align: center;
 }
 
 #btn{
   width: 206px;
   height: 67px;
+  color: #0090ff;
   border-radius: 33.5px;
   box-shadow: 0 0 8.7px 1.3px rgba(0, 120, 255, 0.5);
   background-color: #ffffff;
@@ -73,8 +102,8 @@ body{
   font-style: normal;
   line-height: 1;
   letter-spacing: -1.13px;
-  text-align: left;
-  color: #0090ff;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-top: 80px;
 }
 
 #btn:hover {
@@ -113,3 +142,63 @@ body{
   background-color: none;
   position: relative;
 }
+
+.pool_in_city{
+  padding: 20%;
+}
+
+/* @media (min-width: 768px) {
+
+.logoBox {
+  height: 150px;
+  width: 100%;
+}
+
+.description {
+  height: 350px;
+  width: 100%;
+}
+
+.infoForm {
+  height: 350px;
+  width: 100%;
+}
+
+.city_list {
+  height: 175px;
+  width: 100%;
+}
+
+.pool_in_city {
+  height: 175px;
+  width: 100%;
+}
+} */
+/*
+@media (min-width: 992px) {
+
+.logoBox {
+  height: 200px;
+  width: 100%;
+}
+
+.description {
+  height: 230px;
+  width: 100%;
+}
+
+.infoForm {
+  height: 495px;
+  width: 100%;
+}
+
+.city_list {
+  height: 410px;
+  width: 100%;
+}
+
+.pool_in_city {
+  height: 330px;
+  width: 100%;
+}
+} */
