@@ -5,7 +5,6 @@
       <span class="box">수영장</span>이 알고 싶다면?
     </div>
     <form method="POST" class="form">{% csrf_token %}
-        <!--{{ form.as_p }}-->
         <div id="first">
           <id="citi_form"> {{ form.cities }} <span class="text">에 있는 </span> </div>
         <div id="second">
@@ -14,6 +13,25 @@
     </form>
     <div class="city_list">
       {% for city in city_list %}
-        {{ city.city_name }}
+        <button class="city-action-btn" type="button">{{ city.city_name }}</button>
+        <div class="pool_in_city">
+          {% pool.city %}
+        </div>
       {% endfor %}
+    </div>
+
+    <script>
+      document.getElementById("pool_in_city").style.display = "none";
+      function showRef() {
+        var x = document.getElementById("note_contents");
+        var a = {{ pool.pool_name }}
+        if (x.style.display === "none") {
+          note.innerHTML = "접기";
+          x.style.display = "block";
+        } else {
+          note.innerHTML = "자세히";
+          x.style.display = "none";
+        }
+      }
+    </script>
 {% endblock %}

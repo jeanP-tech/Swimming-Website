@@ -29,8 +29,7 @@ def getinfo(request):
             return render(request, 'swimapp/pool.html', {'pool_list': pool_list, 'time_list': time_list})
     else:
         form = CheckForm()
-        city_list = City.objects.all()
-        return render(request, 'swimapp/index.html', {'form':form, 'city_list': city_list})
+        return render(request, 'swimapp/index.html', {'form':form})
 #
 # def instantview(request):
 #     return render(request, 'swimapp/pool.html', {})
