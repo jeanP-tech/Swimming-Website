@@ -22,8 +22,9 @@
         </form>
       </div>
       <div class="city_list">
+        <img src="../../static/swimapp/images/wave_white.png" id="wave_white">
         {% for city in city_list %}
-          <button class="city-action-btn" type="button">{{ city.city_name }}</button>
+          <button class="city-action-btn" type="button"><div class="button_text">{{ city.city_name }}</div></button>
         {% endfor %}
       </div>
       <div class="pool_in_city">
