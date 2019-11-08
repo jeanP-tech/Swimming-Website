@@ -164,11 +164,49 @@ body{
 }
 
 .time_list{
-  border-bottom: 50px;
+  color: #0090ff;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: -0.75px;
+  text-align: center;
+}
+
+.time_list h2{
+  font-size: 45px;
+  margin-bottom: 20px;
+}
+
+.time_list h2 p{
+  margin-bottom: 20px;
+}
+
+.time_list h3{
+  font-size: 30px;
+  color: #ffffff;
+  background-color: #0090ff;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  width: 110px;
+  text-align: center;
+}
+
+.container{
+  text-align: center;
+}
+
+.section{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 #note{
+  display: inline-block;
   text-decoration: underline;
+  margin-bottom: 150px;
 }
 
 #note_contents{

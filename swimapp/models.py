@@ -9,7 +9,9 @@ class City(models.Model):
 class Pool(models.Model):
     city = models.ForeignKey(City, default='', on_delete = models.CASCADE)
     pool_name = models.CharField(max_length = 30, default='')
+    price = models.TextField(null=True)
     note = models.TextField(null=True)
+
     def __str__(self):
         return self.pool_name
 
@@ -17,7 +19,7 @@ class Timetable(models.Model):
     pool = models.ForeignKey(Pool, on_delete = models.CASCADE)
     start_time = models.TimeField(auto_now=False, auto_now_add=False)
     end_time = models.TimeField(auto_now=False, auto_now_add=False)
-    price = models.IntegerField(default=3500)
+    # price = models.IntegerField(default=3500)
 
     DAY_CHOICES = [
         (1, "월요일"),

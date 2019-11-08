@@ -2,16 +2,26 @@
 {% block content %}
   <div class="time_list">
     {% for pool in pool_list %}
-      {{ pool.pool_name|linebreaks }}
-        {% for time in time_list %}
-          {% if pool.pool_name|stringformat:"s" == time.pool|stringformat:"s" %}
-            {{ time.get_day_display }}
-            {{ time.start_time|time:"H:i" }} ~
-            {{ time.end_time|time:"H:i" }}
-            {{ time.price }}원
-            {{ value|linebreaks }}
-          {% endif %}
-        {% endfor %}
+      <h2 class="pool_name"> {{ pool.pool_name|linebreaks }} </h2>
+        <div class="container">
+          <div class="section">
+            <h3 class="time_title">이용시간</h3>
+              {% for time in time_list %}
+                {% if pool.pool_name|stringformat:"s" == time.pool|stringformat:"s" %}
+                {% ifchanged time.day %}
+                  {{ time.get_day_display|linebreaks }}
+                {% endifchanged %}
+                  {{ time.start_time|time:"H:i" }} ~
+                  {{ time.end_time|time:"H:i" }}
+                  {{ value|linebreaks }}
+                {% endif %}
+              {% endfor %}
+          </div>
+          <div class="section">
+            <h3 class="price_title"> 이용가격 </h3>
+            {{ pool.price|linebreaks }}
+          </div>
+        </div>
       <div id="note" onclick="showRef()"> 자세히 </div>
           <div id="note_contents">
             {{ pool.note|linebreaks }}
