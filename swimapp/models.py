@@ -10,6 +10,7 @@ class Pool(models.Model):
     city = models.ForeignKey(City, default='', on_delete = models.CASCADE)
     pool_name = models.CharField(max_length = 30, default='')
     price = models.TextField(null=True)
+    info = models.TextField(null=True)
     note = models.TextField(null=True)
 
     def __str__(self):
