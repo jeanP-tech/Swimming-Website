@@ -1,6 +1,7 @@
 {% extends 'swimapp/base.html' %}
 {% block content %}
   <div class="logoBox">
+    <div class="logo_helper"></div>
     <a href=""> <img src="../../static/swimapp/images/logo_gif_2.gif" id="logo"></a> <br>
   </div>
     <div class="description_box">
@@ -24,31 +25,4 @@
             <button id="btn" type="submit" value="Save">찾아보자!</button>
         </form>
       </div>
-      <div class="city_list">
-        <img src="../../static/swimapp/images/wave_white.png" id="wave_white">
-        {% for city in city_list %}
-          <button class="city-action-btn" type="button"><div class="button_text">{{ city.city_name }}</div></button>
-        {% endfor %}
-      </div>
-      <div class="pool_in_city">
-      </div>
-    </div>
-
-    <script>
-      function showPoolList(cityCity_name){
-        document.getElementById
-      }
-      // document.getElementById("pool_in_city").style.display = "none";
-      // function showRef() {
-      //   var x = document.getElementById("note_contents");
-      //   var a = {{ pool.pool_name }}
-      //   if (x.style.display === "none") {
-      //     note.innerHTML = "접기";
-      //     x.style.display = "block";
-      //   } else {
-      //     note.innerHTML = "자세히";
-      //     x.style.display = "none";
-      //   }
-      // }
-    </script>
 {% endblock %}
