@@ -7,14 +7,10 @@ body{
 
 .logoBox{
   height: 300px;
-  /* display: flex;
-  align-items: center; */
 }
 
 .logoBox2{
   height: 390px;
-  /* display: flex;
-  align-items: center; */
   background-image: url(../images/BG_2.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -110,13 +106,6 @@ body{
   mix-blend-mode: soft-light;
 }
 
-.text{
-  display: inline;
-  /*background-color: rgba(1, 106, 215, 0.6);*/
-  font-weight: 700;
-
-}
-
 .infoForm{
   padding-top: 100px;
   font-size: 45px;
@@ -133,7 +122,6 @@ body{
   color: #ffffff;
   font-size: 30px;
   font-weight: bold;
-  text-align: center;
   border: 0px;
   border-bottom: 3px solid #ffffff;
 }
@@ -204,7 +192,7 @@ body{
   height: 32px;
   display: flex;
   align-items: center;
-  width: 110px;
+  width: 118px;
   margin: 0 auto 30px auto;
 }
 
@@ -243,6 +231,9 @@ body{
   margin: 70px auto 50px auto;
   text-align: left;
   padding: 20px;
+  font-size: 20px;
+  line-height: 1.75;
+  letter-spacing: -0.5px;
 }
 
 #notice p{
@@ -263,38 +254,15 @@ body{
   margin: 20px;
 }
 
-/* @media (min-width: 768px) {
-
-.logoBox {
-  height: 150px;
-  width: 100%;
-}
-
-.description {
-  height: 350px;
-  width: 100%;
-}
-
-.infoForm {
-  height: 350px;
-  width: 100%;
-}
-
-.city_list {
-  height: 175px;
-  width: 100%;
-}
-
-.pool_in_city {
-  height: 175px;
-  width: 100%;
-}
-} */
-
 @media (max-width: 768px) {
 
 .logoBox {
   height: 180px;
+}
+
+.logoBox2{
+  background-image: url(../images/BG_m.png);
+  height: 250px;
 }
 
 #logo{
@@ -325,19 +293,22 @@ body{
   padding-top: 80px;
 }
 
+.form_select{
+  font-size: 20px;
+  width: 90px;
+}
+
 #btn{
   width: 91px;
   height: 30px;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 50px;
+  line-height: 1;
+  letter-spacing: -0.5px;
 }
 
 .city_list {
   display: none;
-}
-
-.logoBox2{
-  height: 200px;
 }
 
 .time_list h2{
@@ -347,7 +318,7 @@ body{
 .time_list h3{
   font-size: 20px;
   height: 21px;
-  width: 71px;
+  width: 72px;
 }
 
 .time_list{
@@ -370,13 +341,14 @@ body{
 }
 
 .noteContainer{
-  margin: 20px 0 50px 0;
+  margin: 40px 0 50px 0;
+  font-size: 20px;
 }
 
 #notice{
-  width: 350px;
+  width: 80%;
   border: solid 1px #0090ff;
-  margin: 70px auto 50px auto;
+  margin: 50px auto 50px auto;
   text-align: left;
   padding: 20px;
 }
