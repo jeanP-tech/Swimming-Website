@@ -42,7 +42,7 @@ body{
   margin-bottom: 80px;
 }
 
-.description_box .description{
+.description{
   color: #777777;
   font-size: 30px;
   line-height: 1.5;
@@ -51,7 +51,12 @@ body{
   display: inline-block;
 }
 
-.description_box .description .firstLine{
+.firstLine1{
+  display: block;
+  float: left;
+}
+
+.firstLine2{
   display: flex;
   align-items: center;
 }
@@ -65,7 +70,7 @@ body{
   align-items: center;
 }
 
-.description_box .description .secondLine{
+.secondLine{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,21 +85,21 @@ body{
   align-items: center;
 }
 
+.breakMobile{
+  display: none;
+}
+
 .infoForm{
   width: 100%;
   height: 460px;
   text-align: center;
   vertical-align: middle;
-}
-
-.city_list{
-  width: 100%;
-  height: 310px;
-}
-
-.pool_in_city{
-  width: 100%;
-  height: 230px;
+  padding-top: 100px;
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 1.56;
+  letter-spacing: -1.13px;
+  color: #ffffff;
 }
 
 .background{
@@ -109,15 +114,6 @@ body{
   background-size: cover;
   background-repeat: no-repeat;
   mix-blend-mode: soft-light;
-}
-
-.infoForm{
-  padding-top: 100px;
-  font-size: 45px;
-  font-weight: bold;
-  line-height: 1.56;
-  letter-spacing: -1.13px;
-  color: #ffffff;
 }
 
 .form_select{
@@ -158,19 +154,6 @@ body{
 
 #btn:hover {
   filter: brightness(80%);
-}
-
-#wave_white{
-  display: block;
-  width: 100%;
-  margin: 0 auto 50px auto;
-}
-
-.pool_list{
-  display: inline-block;
-  color: white;
-  margin-top: 30px;
-  font-weight: 700;
 }
 
 .time_list{
@@ -259,74 +242,51 @@ body{
   margin: 20px;
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
 
 .logoBox {
-  height: 180px;
+  height: 220px;
 }
 
 .logoBox2{
-  background-image: url(../images/BG_m_2.png);
-  height: 250px;
+  background-image: url(../images/BG_m.png);
+  height: 300px;
 }
 
 #logo{
-  width: 80%;
+  width: 95%;
 }
 
 .description_box {
-  height: 100px;
+  height: 200px;
   margin-bottom: 60px;
 }
 
-.description_box .description{
-  font-size: 20px;
-}
-
-.box1{
-  height: 21px;
-}
-
-.box2{
-  height: 21px;
-}
-
 .infoForm {
-  height: 240px;
-  font-size: 20px;
+  height: 430px;
   padding-top: 80px;
 }
 
 .form_select{
-  font-size: 20px;
-  width: 90px;
+  font-size: 30px;
+  width: 110px;
+}
+
+.firstLine1{
+  float: none;
+}
+
+.breakMobile{
+  display: inline-block;
 }
 
 #btn{
-  width: 91px;
-  height: 30px;
-  font-size: 16px;
+  width: 180px;
+  height: 58px;
+  font-size: 35px;
   margin-top: 50px;
   line-height: 1;
   letter-spacing: -0.5px;
-}
-
-.city_list {
-  display: none;
-}
-
-.time_list h2{
-  font-size: 30px;
-}
-
-.time_list h3{
-  font-size: 20px;
-  height: 21px;
-  width: 75px;
-}
-
-.time_list{
-  font-size: 20px;
 }
 
 .section1{
@@ -357,4 +317,4 @@ body{
   padding: 20px;
 }
 
-} */
+}
