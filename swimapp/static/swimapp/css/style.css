@@ -264,6 +264,10 @@ body{
   margin-bottom: 60px;
 }
 
+.description{
+  font-size: 35px;
+}
+
 .infoForm {
   height: 430px;
   padding-top: 80px;
