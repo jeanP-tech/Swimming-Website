@@ -1,6 +1,6 @@
 # SWIM, SWIM! (Website for Swimmers)
 나와 가까운 수영장들의 자유수영 시간을 알고 싶다면?  
-버튼만 누르면 수영  목록을 보여주는 스윔스윔 웹을 이용해보자.
+버튼만 누르면 수영시간 목록을 보여주는 스윔스윔 웹을 이용해보자.
 
 ## 사이트 주소
 http://swimswim.pythonanywhere.com/
