@@ -242,10 +242,10 @@ body{
   margin: 20px;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
 
 .logoBox {
-  height: 220px;
+  height: 230px;
 }
 
 .logoBox2{
@@ -268,8 +268,7 @@ body{
 }
 
 .form_select{
-  font-size: 30px;
-  width: 110px;
+  width: 120px;
 }
 
 .firstLine1{
