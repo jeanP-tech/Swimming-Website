@@ -5,42 +5,46 @@
     <a href=""> <img src="../../static/swimapp/images/logo_gif_white.gif" id="logo"></a> <br>
   </div>
   <div class="time_list">
-    {% for pool in pool_list %}
-      <h2> {{ pool.pool_name|linebreaks }} </h2>
-        <div class="container">
-          <div class="section1">
-            <h3>이용시간</h3>
-              {% for time in time_list %}
-                {% if pool.pool_name|stringformat:"s" == time.pool|stringformat:"s" %}
-                {% ifchanged time.day %}
-                  {{ time.get_day_display|linebreaks }}
-                {% endifchanged %}
-                  <div class="textInContainer">
-                    {{ time.start_time|time:"H:i" }} ~
-                    {{ time.end_time|time:"H:i" }}
-                  </div>
-                {% endif %}
-              {% endfor %}
+    {% if time_list %}
+      {% for pool in pool_list %}
+        <h2> {{ pool.pool_name|linebreaks }} </h2>
+          <div class="container">
+            <div class="section1">
+              <h3>이용시간</h3>
+                {% for time in time_list %}
+                  {% if pool.pool_name|stringformat:"s" == time.pool|stringformat:"s" %}
+                  {% ifchanged time.day %}
+                    {{ time.get_day_display|linebreaks }}
+                  {% endifchanged %}
+                    <div class="textInContainer">
+                      {{ time.start_time|time:"H:i" }} ~
+                      {{ time.end_time|time:"H:i" }}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+            </div>
+            <div class="section2">
+              <h3> 이용가격 </h3>
+                <div class="textInContainer">
+                  {{ pool.price|linebreaks }}
+                </div>
+            </div>
           </div>
-          <div class="section2">
-            <h3> 이용가격 </h3>
-              <div class="textInContainer">
-                {{ pool.price|linebreaks }}
+        <div class="noteContainer">
+          <div id="note" onclick="showRef()"> 자세히 </div>
+            <div id="note_contents">
+              <div id="info">
+                {{ pool.info|linebreaks }}
               </div>
-          </div>
+              <div id="notice">
+                {{ pool.note|linebreaks }}
+              </div>
+            </div>
         </div>
-      <div class="noteContainer">
-        <div id="note" onclick="showRef()"> 자세히 </div>
-          <div id="note_contents">
-            <div id="info">
-              {{ pool.info|linebreaks }}
-            </div>
-            <div id="notice">
-              {{ pool.note|linebreaks }}
-            </div>
-          </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    {% else %}
+      찾으시는 시간에 수영장 정보가 없습니다!
+    {% endif %}
   </div>
 
   <script>

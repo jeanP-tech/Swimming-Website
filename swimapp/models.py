@@ -11,8 +11,9 @@ class Pool(models.Model):
     pool_name = models.CharField(max_length = 30, default='')
     price = models.TextField(null=True)
     info = models.TextField(null=True)
+    homepage = models.CharField(max_length=30, default='')
     note = models.TextField(null=True)
-
+    
     def __str__(self):
         return self.pool_name
 
