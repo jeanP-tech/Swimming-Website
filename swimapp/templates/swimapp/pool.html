@@ -33,10 +33,10 @@
         <div class="noteContainer">
           <div id="note" onclick="showRef()"> 자세히 </div>
             <div id="note_contents">
-              <div id="info">
-                {{ pool.info|linebreaks }}
-              </div>
-              <div id="notice">
+              <div class="info"> {{ pool.info|linebreaks }} </div>
+              <div class="homepage"> {{ pool.homepage }} </div>
+              <button class="homepageBtn">홈페이지</button>
+              <div class="notice">
                 {{ pool.note|linebreaks }}
               </div>
             </div>
