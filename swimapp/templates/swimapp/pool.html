@@ -34,8 +34,8 @@
           <div id="note" onclick="showRef()"> 자세히 </div>
             <div id="note_contents">
               <div class="info"> {{ pool.info|linebreaks }} </div>
-              <div class="homepage"> {{ pool.homepage }} </div>
-              <button class="homepageBtn">홈페이지</button>
+              <div class="homepage"> {{ pool.homepage|urlize }} </div>
+              <button onclick="parent.open('{{ pool.homepage }}')" type="button" class="homepageBtn">홈페이지</button>
               <div class="notice">
                 {{ pool.note|linebreaks }}
               </div>

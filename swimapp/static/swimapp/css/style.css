@@ -239,6 +239,15 @@ body{
   margin-bottom: 0;
 }
 
+.homepage a:link{
+  color: #0090ff;
+  text-decoration: none;
+}
+
+.homepage a:visited{
+  color: #0090ff;
+}
+
 .homepageBtn{
   display: none;
 }
