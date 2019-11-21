@@ -230,9 +230,13 @@ body{
   margin: 50px 0 150px 0;
 }
 
-#note{
+.note{
   display: inline-block;
   text-decoration: underline;
+}
+
+.note_contents{
+  display: none;
 }
 
 .info p{

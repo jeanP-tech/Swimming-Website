@@ -31,8 +31,8 @@
             </div>
           </div>
         <div class="noteContainer">
-          <div id="note" onclick="showRef()"> 자세히 </div>
-            <div id="note_contents">
+          <div class="note"> 자세히 </div>
+            <div class="note_contents">
               <div class="info"> {{ pool.info|linebreaks }} </div>
               <div class="homepage"> {{ pool.homepage|urlize }} </div>
               <button onclick="parent.open('{{ pool.homepage }}')" type="button" class="homepageBtn">홈페이지</button>
@@ -48,16 +48,19 @@
   </div>
 
   <script>
-    document.getElementById("note_contents").style.display = "none";
-    function showRef() {
-      var x = document.getElementById("note_contents");
-      var note = document.getElementById("note");
-      if (x.style.display === "none") {
-        note.innerHTML = "접기";
-        x.style.display = "block";
-      } else {
-        note.innerHTML = "자세히";
-        x.style.display = "none";
+    var note_contents = document.querySelectorAll(".note_contents");
+    var note = document.querySelectorAll(".note");
+
+    for(let i=0; i<note.length; i++){
+      note[i].onclick = function() {
+        if(!note_contents[i].style.display || note_contents[i].style.display === "none"){
+          note[i].innerHTML = "접기";
+          note_contents[i].style.display = "block";
+        }
+        else{
+          note[i].innerHTML = "자세히";
+          note_contents[i].style.display = "none";
+        }
       }
     }
   </script>
