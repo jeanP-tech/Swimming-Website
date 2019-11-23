@@ -33,7 +33,23 @@
         <img src="../../static/swimapp/images/wave_white.png" id="wave">
         {% for city in city_list %}
           <button id="cityButton">{{ city.city_name }}</button>
+          <script>
+            var x = document.getElementById("cityButton");
+
+            x.onclick = function(){
+              "{% for pool in pool_in_city_list %}"
+                "{% if city.city_name == pool.city %}"
+                  "{{ pool.pool_name }}"
+                "{% endif %}"
+              "{% endfor %}"
+            }
+          </script>
         {% endfor %}
+
       </div>
     </div>
+
+
+
+
 {% endblock %}
