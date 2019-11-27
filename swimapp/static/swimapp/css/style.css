@@ -285,6 +285,21 @@ body{
   margin: 20px;
 }
 
+.no_pool{
+  height: 300px;
+}
+
+.middle_helper{
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.no_pool_textBox{
+  vertical-align: middle;
+  display: inline-block;
+}
+
 @media only screen and (max-width: 768px) {
 
   .logoBox {
