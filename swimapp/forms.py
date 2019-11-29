@@ -15,7 +15,6 @@ class CheckForm(forms.Form):
     times = forms.ChoiceField(
         label='',
         choices=TimeInterval.TIME_CHOICES,
-        # empty_label='',
         widget=forms.Select(attrs={'class': 'form_select'})
     )
 
