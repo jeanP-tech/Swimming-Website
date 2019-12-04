@@ -12,8 +12,8 @@ class Pool(models.Model):
     price = models.TextField(null=True)
     info = models.TextField(null=True)
     homepage = models.CharField(max_length=30, default='')
-    note = models.TextField(null=True)
-    
+    note = models.TextField(default='', blank=True)
+
     def __str__(self):
         return self.pool_name
 
@@ -45,8 +45,7 @@ class TimeInterval(models.Model):
 
     TIME_CHOICES = (
         ('', ' '),
-        (3, "3시간"),
-        (7, "7시간"),
+        (5, "5시간"),
         (12, "12시간"),
         (24, "24시간")
     )
