@@ -6,19 +6,20 @@
   </div>
   <div class="time_list">
     {% if time_list %}
-      {% for pool in pool_list %}
-        <h2> {{ pool.pool_name|linebreaks }} </h2>
+      {% for timeA in time_list %}
+        {% ifchanged timeA.pool %}
+          <h2> {{ timeA.pool|linebreaks }} </h2>
           <div class="container">
             <div class="section1">
               <h3>이용시간</h3>
-                {% for time in time_list %}
-                  {% if pool.pool_name|stringformat:"s" == time.pool|stringformat:"s" %}
-                  {% ifchanged time.day %}
-                    {{ time.get_day_display|linebreaks }}
+                {% for timeB in time_list %}
+                  {% if timeA.pool|stringformat:"s" == timeB.pool|stringformat:"s" %}
+                  {% ifchanged timeB.day %}
+                    {{ timeB.get_day_display|linebreaks }}
                   {% endifchanged %}
                     <div class="textInContainer">
-                      {{ time.start_time|time:"H:i" }} ~
-                      {{ time.end_time|time:"H:i" }}
+                      {{ timeB.start_time|time:"H:i" }} ~
+                      {{ timeB.end_time|time:"H:i" }}
                     </div>
                   {% endif %}
                 {% endfor %}
@@ -26,21 +27,32 @@
             <div class="section2">
               <h3>이용가격</h3>
                 <div class="textInContainer">
-                  {{ pool.price|linebreaks }}
+                  {% for pool in pool_list %}
+                    {% if timeA.pool|stringformat:"s" == pool.pool_name|stringformat:"s" %}
+                      {{ pool.price|linebreaks }}
+                    {% endif %}
+                  {% endfor %}
                 </div>
             </div>
           </div>
-        <div class="noteContainer">
-          <div class="note"> 자세히 </div>
-            <div class="note_contents">
-              <div class="info"> {{ pool.info|linebreaks }} </div>
-              <div class="homepage"> {{ pool.homepage|urlize }} </div>
-              <button onclick="parent.open('{{ pool.homepage }}')" type="button" class="homepageBtn">홈페이지</button>
-              <div class="notice">
-                {{ pool.note|linebreaks }}
+          <div class="noteContainer">
+            <div class="note"> 자세히 </div>
+              <div class="note_contents">
+                {% for pool in pool_list %}
+                  {% if timeA.pool|stringformat:"s" == pool.pool_name|stringformat:"s" %}
+                    <div class="info"> {{ pool.info|linebreaks }} </div>
+                    <div class="homepage"> {{ pool.homepage|urlize }} </div>
+                    <button onclick="parent.open('{{ pool.homepage }}')" type="button" class="homepageBtn">홈페이지</button>
+                    {% if pool.note %}
+                      <div class="notice">
+                        {{ pool.note|linebreaks }}
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
               </div>
-            </div>
-        </div>
+          </div>
+      {% endifchanged %}
       {% endfor %}
     {% else %}
       <div class="no_pool">

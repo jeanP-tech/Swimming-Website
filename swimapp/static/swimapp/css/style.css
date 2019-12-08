@@ -10,7 +10,7 @@ body{
 }
 
 .logoBox2{
-  height: 430px;
+  height: 470px;
   background-image: url(../images/BG_2.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -211,7 +211,7 @@ body{
   height: 32px;
   line-height: 32px;
   display: inline-block;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 5px auto;
 }
 
 .priceBg{
