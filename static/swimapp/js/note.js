@@ -13,3 +13,9 @@ for(let i=0; i<note.length; i++){
       }
     });
 }
+
+function init(){
+  console.log("hi");
+}
+
+init();
